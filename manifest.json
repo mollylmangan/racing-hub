@@ -1,0 +1,22 @@
+{
+  "name": "Molly's Motorway",
+  "short_name": "Motorway",
+  "description": "Molly Mangan's Racing Journey Hub \u2014 Academy, Journal, Study Materials",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

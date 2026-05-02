@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Molly Mangan — Racing Journey Hub</title>
+<meta name="theme-color" content="#0A0A0A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Molly's Motorway">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -231,6 +237,65 @@
 .ft-meta{margin-top:28px;font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.18);letter-spacing:.2em;}
 @media(max-width:960px){.sidebar{transform:translateX(-100%);}.sidebar.open{transform:translateX(0);}.main{margin-left:0;padding-top:52px;}.page{padding:28px 22px;}.mobile-hdr{display:flex;}.two-col,.sim-grid,.photo-grid,.workout-grid{grid-template-columns:1fr;}.skill-grid{grid-template-columns:1fr 1fr;}.gt3-step{grid-template-columns:1fr;}.gt3-num{font-size:40px;}.site-footer{padding:40px 22px;}}
 @media(max-width:520px){.stat-row{flex-wrap:wrap;}.stat-blk{min-width:calc(50% - 1px);}.skill-grid{grid-template-columns:1fr;}.ev-type{display:none;}.cards-grid{grid-template-columns:1fr;}}
+
+/* ── ACADEMY ── */
+.acad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:2px;margin-bottom:48px;}
+.acad-card{background:var(--gray);padding:28px 32px;position:relative;transition:background .2s;}
+.acad-card:hover{background:var(--mid);}
+.acad-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--red);transition:height .3s;}
+.acad-card:hover::before{height:100%;}
+.acad-num{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.25em;color:var(--red);text-transform:uppercase;margin-bottom:10px;}
+.acad-card h3{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.04em;color:var(--white);margin-bottom:10px;}
+.acad-card p{font-size:12px;color:var(--light-gray);line-height:1.85;}
+
+/* ── TERMS ── */
+.terms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:2px;margin-bottom:48px;align-items:start;}
+.term-block{background:var(--gray);padding:24px 28px;}
+.term-letter{font-family:'Bebas Neue',sans-serif;font-size:52px;color:rgba(232,32,32,0.2);line-height:1;margin-bottom:12px;}
+.term-item{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.04);}
+.term-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.term-word{display:block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.15em;color:var(--red);text-transform:uppercase;margin-bottom:5px;}
+.term-def{font-size:12px;color:var(--light-gray);line-height:1.75;}
+
+/* ── VIDEO DIARY ── */
+.vd-compose{background:var(--gray);border:1px solid var(--border2);padding:22px;margin-bottom:28px;display:flex;flex-direction:column;gap:10px;}
+.vd-compose input,.vd-compose textarea{background:var(--mid);border:1px solid var(--border2);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:13px;padding:10px 14px;outline:none;width:100%;}
+.vd-compose textarea{min-height:70px;resize:none;}
+.vd-compose input::placeholder,.vd-compose textarea::placeholder{color:var(--muted);}
+.vd-meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.vd-meta select{background:var(--mid);border:1px solid var(--border2);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:12px;padding:7px 10px;outline:none;}
+.vd-entry{background:var(--gray);margin-bottom:2px;overflow:hidden;}
+.vd-video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
+.vd-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.vd-info{padding:18px 22px;}
+.vd-cat-badge{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.2em;color:var(--red);text-transform:uppercase;margin-bottom:8px;display:block;}
+.vd-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.04em;color:var(--white);margin-bottom:8px;}
+.vd-note{font-size:13px;color:var(--light-gray);line-height:1.8;margin-bottom:10px;}
+.vd-date{font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);}
+.vd-del{background:none;border:none;cursor:pointer;color:var(--muted);font-size:12px;opacity:.4;padding:2px 6px;float:right;margin-top:-20px;}
+.vd-del:hover{opacity:.9;color:#e86060;}
+.no-videos{text-align:center;padding:48px;color:var(--muted);font-size:13px;background:var(--gray);}
+
+/* ── STUDY MATERIALS ── */
+.study-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+.sf-btn{background:var(--gray);border:1px solid var(--border2);color:var(--muted);font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:7px 14px;cursor:pointer;transition:all .15s;}
+.sf-btn:hover,.sf-btn.active{background:var(--red);border-color:var(--red);color:var(--white);}
+.study-grid{display:flex;flex-direction:column;gap:2px;}
+.sv-entry{display:grid;grid-template-columns:280px 1fr;gap:0;background:var(--gray);transition:background .2s;}
+.sv-entry:hover{background:var(--mid);}
+.sv-thumb{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
+.sv-thumb iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;pointer-events:none;}
+.sv-info{padding:20px 24px;display:flex;flex-direction:column;justify-content:space-between;}
+.sv-cat{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.2em;color:var(--red);text-transform:uppercase;margin-bottom:8px;display:block;}
+.sv-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.04em;color:var(--white);margin-bottom:8px;line-height:1.1;}
+.sv-note{font-size:12px;color:var(--light-gray);line-height:1.75;flex:1;}
+.sv-actions{display:flex;gap:10px;margin-top:12px;align-items:center;}
+.sv-watch{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--red);text-decoration:none;border:1px solid var(--border);padding:4px 12px;}
+.sv-watch:hover{background:var(--red);color:var(--white);}
+.sv-del{background:none;border:none;cursor:pointer;color:var(--muted);font-size:11px;opacity:.4;}
+.sv-del:hover{opacity:.9;color:#e86060;}
+@media(max-width:780px){.sv-entry{grid-template-columns:1fr;}.sv-thumb{padding-bottom:56.25%;}}
+
 </style>
 <div id="mm-racing-hub">
 <div id="app">
@@ -241,6 +306,15 @@
     <div class="sb-sub">glutemama.com · @mollylmangan</div>
   </div>
   <nav class="sb-nav">
+    <div class="sb-section">Academy</div>
+    <div class="sb-item" data-page="academy-sim"><span class="sb-icon">🎮</span>Sim Racing</div>
+    <div class="sb-item" data-page="academy-karting"><span class="sb-icon">🏎️</span>Karting</div>
+    <div class="sb-item" data-page="academy-hpde"><span class="sb-icon">📈</span>HPDE & Track Days</div>
+    <div class="sb-item" data-page="academy-autocross"><span class="sb-icon">🍌</span>Autocross</div>
+    <div class="sb-item" data-page="academy-specmiata"><span class="sb-icon">🔵</span>Spec Miata</div>
+    <div class="sb-item" data-page="academy-gt4"><span class="sb-icon">🔶</span>GT4</div>
+    <div class="sb-item" data-page="academy-gt3"><span class="sb-icon">🏆</span>GT3</div>
+    <div class="sb-item" data-page="academy-terms"><span class="sb-icon">📖</span>Racing Terms A–Z</div>
     <div class="sb-section">My Journey</div>
     <div class="sb-item active" data-page="dashboard"><span class="sb-icon">⚡</span>Home Base</div>
     <div class="sb-item" data-page="journal"><span class="sb-icon">📓</span>Race Journal</div>
@@ -270,6 +344,8 @@
     <div class="sb-item" data-page="network"><span class="sb-icon">🤝</span>Networking</div>
     <div class="sb-item" data-page="budget"><span class="sb-icon">💰</span>Budget</div>
     <div class="sb-section">Content</div>
+    <div class="sb-item" data-page="videodiary"><span class="sb-icon">🎬</span>Video Diary</div>
+    <div class="sb-item" data-page="studymaterials"><span class="sb-icon">📚</span>Study Materials</div>
     <div class="sb-item" data-page="public"><span class="sb-icon">🌐</span>Public Feed</div>
   </nav>
   <div class="sb-footer">
@@ -683,6 +759,257 @@
   <div class="ft-meta">MOLLY MANGAN · GLUTEMAMA.COM · @MOLLYLMANGAN · 2026–∞</div>
 </footer>
 
+
+<!-- ══ ACADEMY: SIM RACING ══ -->
+<div class="page" id="page-academy-sim">
+  <span class="sec-num">Academy — Level 00</span>
+  <h2 class="sec-title">SIM <em>RACING</em></h2>
+  <p class="sec-intro">Before you spend a dollar on real track time, sim racing gives you infinite laps to build muscle memory, learn track layouts, and develop car feel. Every serious driver uses it. Here's how to extract maximum value.</p>
+  <div class="acad-grid">
+    <div class="acad-card"><div class="acad-num">01</div><h3>Why Sim Matters</h3><p>Sim racing isn't a game — it's a training tool. Fernando Alonso, Max Verstappen, and virtually every modern professional driver logs simulator hours. The physics engines in iRacing and Assetto Corsa are accurate enough that professionals use them to learn new tracks before arriving. For you, it's a way to do 200 laps at Harris Hill before your first real HPDE event.</p></div>
+    <div class="acad-card"><div class="acad-num">02</div><h3>What Transfers to Real Life</h3><p>Track layouts and braking markers transfer almost perfectly. Racing line, turn-in points, apex identification, track-out zones — all of it carries over. Racecraft and race starts transfer well. What does NOT transfer: G-forces, tire feel through your body, heat, fear, spatial awareness of the car's physical size. Sim is film study, not practice.</p></div>
+    <div class="acad-card"><div class="acad-num">03</div><h3>Hardware Priority Order</h3><p>Buy in this order: (1) Load cell brake pedal — the single biggest realism upgrade, teaches proper brake modulation. (2) Direct drive wheel — force feedback tells you what the car is doing. (3) Rig/frame — proper seating position matters. A load cell pedal on a Logitech G29 beats a cheap pedal on a Fanatec. The brake is everything.</p></div>
+    <div class="acad-card"><div class="acad-num">04</div><h3>iRacing vs Assetto Corsa</h3><p>iRacing: subscription-based, laser-scanned tracks, best online racing, GT3 cars available, the industry standard for serious sim racers. Best for racing against people. Assetto Corsa: one-time purchase, massive mod library including Harris Hill and COTA, better graphics, great for solo practice. Use both — AC for learning tracks, iRacing for racing competitively.</p></div>
+    <div class="acad-card"><div class="acad-num">05</div><h3>Consistency Drills</h3><p>The most valuable sim exercise: pick one car, one track, and run 20 laps. Your goal is not a fast lap — your goal is to run every lap within 0.3 seconds of each other. This is consistency training, and it translates directly to real racing. A driver who runs 1:32.1, 1:32.3, 1:32.2 is more valuable than one who runs 1:31.8 then 1:33.5. Teams know this.</p></div>
+    <div class="acad-card"><div class="acad-num">06</div><h3>How to Use Data</h3><p>Every sim has a telemetry overlay or replay system. After each session, review your brake traces — are you braking in the same place every lap? Are you releasing brake smoothly or snapping it off? Look at your throttle application — are you getting on power progressively or stabbing it? The data tells you things your hands don't feel yet.</p></div>
+    <div class="acad-card"><div class="acad-num">07</div><h3>Tracks to Practice Now</h3><p>Harris Hill Raceway (Austin, 26mi away) — your primary real-world track, available in Assetto Corsa as a mod. Circuit of The Americas — know it cold before any event there. Motorsport Ranch Cresson — your second local option. Laguna Seca — classic GT3 venue, the Corkscrew is one of the most famous corners in racing. Learn it.</p></div>
+    <div class="acad-card"><div class="acad-num">08</div><h3>Joining the Community</h3><p>iRacing has women's leagues specifically. SimRacingWomen on Discord. r/simracing on Reddit for setup help. Virtual Racing School (VRS) provides professional coaching overlays for iRacing. Blayze.io coaches review real and sim footage. The sim community is genuinely helpful and will make you faster faster than driving alone.</p></div>
+  </div>
+  <div class="callout"><strong>Your first sim session goal:</strong> Don't chase lap time. Drive 10 clean laps at Harris Hill in a Miata without hitting a wall or running off track. Smooth hands, smooth brakes, smooth throttle. If you can do 10 consecutive clean laps, you're ready for your first real HPDE event mentally.</div>
+</div>
+
+<!-- ══ ACADEMY: KARTING ══ -->
+<div class="page" id="page-academy-karting">
+  <span class="sec-num">Academy — Level 01</span>
+  <h2 class="sec-title">KARTING</h2>
+  <p class="sec-intro">Karting is where every serious racing driver's instincts are built. Low to the ground, no power steering, incredibly responsive — a kart teaches you car control and racing line at a visceral level that cars with more grip and more mass simply can't replicate at entry level speeds.</p>
+  <div class="acad-grid">
+    <div class="acad-card"><div class="acad-num">01</div><h3>Why Karting First</h3><p>A kart sits 2 inches off the ground at 60mph with no suspension. Every input is amplified. Smooth hands equal fast laps — there's nowhere to hide bad technique. Champions from Senna to Hamilton to Verstappen all say karting taught them the fundamentals that never leave. COTA Karting's 3-week beginner course is your starting point — ~$150, organized progression, on a real circuit.</p></div>
+    <div class="acad-card"><div class="acad-num">02</div><h3>Racing Line Fundamentals</h3><p>The racing line is the path through a corner that allows the highest average speed. Late apex: brake later than feels natural, turn in late, hit the apex late, maximize corner exit speed. The exit is everything — you carry exit speed down the entire next straight. A slow in / fast out corner is always faster than fast in / slow out. This rule never changes, from karting to GT3.</p></div>
+    <div class="acad-card"><div class="acad-num">03</div><h3>Oversteer vs Understeer</h3><p>Understeer (push): the front tires lose grip, the car goes straight instead of turning. Fix: reduce steering input, lift slightly off throttle to transfer weight forward, wait for grip to return. Oversteer (loose): rear tires lose grip, the rear steps out. Fix: counter-steer into the slide, smooth throttle to control rotation. Karts oversteer easily — learning to catch slides here is invaluable.</p></div>
+    <div class="acad-card"><div class="acad-num">04</div><h3>Kart Setup Basics</h3><p>Rental karts have no setup — they're what they are. But once you progress to arrive-and-drive or own karts, setup matters: tire pressure (cold, before session), seat position (affects weight distribution and kart stiffness), front and rear track width (affects handling balance). Ask the mechanic what setup they recommend for your weight and the track conditions. Always write down what you ran and how the kart felt.</p></div>
+    <div class="acad-card"><div class="acad-num">05</div><h3>Racecraft in Karts</h3><p>Karting teaches you to race wheel-to-wheel in a very physical, direct way. Defensive driving: protect the inside line into corners — the car with the inside line has the right-of-way at the apex. Offensive driving: get alongside someone before the braking zone, force them to defend, carry more speed to the inside. Passing under braking is the most common overtake — out-brake them, get your nose inside, make the corner yours.</p></div>
+    <div class="acad-card"><div class="acad-num">06</div><h3>Austin Karting Options</h3><p>COTA Karting — on-site at Circuit of The Americas. Indoor and outdoor tracks, beginner courses, arrive-and-drive sessions, competitive rental racing. K1 Speed Austin — indoor electric karts, good for technique practice year-round. Whiteline Karting — outdoor track, arrive-and-drive, more serious racing environment. Texas Karting Experience — organized arrive-and-drive events.</p></div>
+    <div class="acad-card"><div class="acad-num">07</div><h3>Helmet and Gear</h3><p>Rental operations provide helmets. For your own sessions, a kart-specific helmet (Snell K2015 or K2020) is different from a car helmet (SA rating) — kart helmets don't need the fire resistance. A neck collar or HANS device equivalent is smart even at kart speeds. Gloves and a rib protector (ribs take a beating in karts) are the two most useful additions beyond the helmet.</p></div>
+    <div class="acad-card"><div class="acad-num">08</div><h3>Progression Path</h3><p>Rental racing → Arrive-and-drive club events (no kart ownership) → Club karting with your own arrive-and-drive kart → Club racing with setup control. You do not need to own a kart to get enormous value from karting. COTA's beginner course followed by monthly arrive-and-drive events gives you the foundation. Budget: $150 for the beginner course, $40–80 per arrive-and-drive session after that.</p></div>
+  </div>
+</div>
+
+<!-- ══ ACADEMY: HPDE ══ -->
+<div class="page" id="page-academy-hpde">
+  <span class="sec-num">Academy — Level 02</span>
+  <h2 class="sec-title">HPDE &amp; TRACK DAYS</h2>
+  <p class="sec-intro">High Performance Driver Education is the most structured, safest pathway from street driver to licensed racer in American motorsport. NASA's HPDE program specifically is built like a curriculum — you progress through four defined levels, each with clear competency requirements before advancement.</p>
+  <div class="acad-grid">
+    <div class="acad-card"><div class="acad-num">01</div><h3>HPDE1 — The Basics</h3><p>Instructor in the car at all times. You drive, they coach. Focus: flag recognition, track limits, passing zones, basic racing line, pre-drive inspection routine. Goal is not speed — it's demonstrating that you're safe, aware, and coachable. The instructor needs to feel comfortable taking their hands off an imaginary wheel. Most drivers spend 2–4 events at HPDE1.</p></div>
+    <div class="acad-card"><div class="acad-num">02</div><h3>HPDE2 — Building Confidence</h3><p>Instructor may allow solo laps. Passing still only in designated zones with a point-by signal. Focus: consistent lap times, smooth inputs, understanding weight transfer. You're building a repeatable process. Your instructor is watching for: consistent braking points, looking ahead (vision), smooth steering, controlled throttle application. When they let you solo, you've earned trust.</p></div>
+    <div class="acad-card"><div class="acad-num">03</div><h3>HPDE3 — Point-By Passing</h3><p>This is where it clicks. Open passing by signal — you point someone by when you're comfortable and when it's safe. Instructor optional. Focus: trail braking introduction, reading traffic, developing a personal rhythm. Time Trial license is now available. Many drivers stay here for a long time because it's genuinely enjoyable without the commitment of full racing. Nothing wrong with living here for a season.</p></div>
+    <div class="acad-card"><div class="acad-num">04</div><h3>HPDE4 — Racing Pace</h3><p>Open passing anywhere on track. You're driving alongside licensed club racers. This is the final prerequisite for Competition School. Your lap times should be approaching competitive amateur times. Focus: racecraft without contact, managing tire degradation, understanding when to push and when to manage. After 3–4 HPDE4 events where you feel genuinely confident, apply for Competition School.</p></div>
+    <div class="acad-card"><div class="acad-num">05</div><h3>Pre-Track Day Checklist</h3><p>This is your safety ritual — do it every single time without exception. Fresh brake pads (check thickness). Motul RBF600 brake fluid flush (old fluid absorbs moisture and boils). Tire tread check (look for wear, cracks, nails). Torque lug nuts (use a torque wrench, correct spec for your wheels). Check fluids (oil, coolant). Remove all loose items from interior. Tape over lights (protects against stone chips). Log your tire pressures cold before the first session.</p></div>
+    <div class="acad-card"><div class="acad-num">06</div><h3>Track Flags — Know All of Them</h3><p>Green: track is clear, racing/driving conditions are good. Yellow (stationary): hazard ahead, no passing, slow down. Yellow (waving): immediate hazard, be prepared to stop. Red: session stopped, return to pits immediately. Black (pointed at you): come into pits, something is wrong with your car. Black with orange circle: mechanical problem, come in. Blue: faster car approaching, prepare to give point-by. Checkered: session over. White: last lap or slow vehicle on track. Knowing these is tested in Competition School.</p></div>
+    <div class="acad-card"><div class="acad-num">07</div><h3>The Debrief Habit</h3><p>After every session — before you talk to anyone, before you eat, before you check your phone — sit in your car for 3 minutes and write down three things: what worked, what didn't, what you want to try next session. This is how you improve faster than people who just drive laps. Then review your GoPro footage the same evening. Look specifically at your hands (are they smooth?) and your vision (where are you looking?).</p></div>
+    <div class="acad-card"><div class="acad-num">08</div><h3>Your Local Tracks</h3><p>Harris Hill Raceway (h2r.com): 1.82 miles, 11 turns, 26 miles from Austin. Your primary track. Beautiful layout with elevation changes. NASA Texas and SCCA Lone Star both run events here. Motorsport Ranch Cresson (msrhouston.com): multiple layouts, 45 miles from Austin. More technical, good for advanced skills. COTA: Circuit of The Americas — 3.4 miles, F1-spec. NASA and SCCA run club events here. More expensive but the experience is extraordinary.</p></div>
+  </div>
+</div>
+
+<!-- ══ ACADEMY: AUTOCROSS ══ -->
+<div class="page" id="page-academy-autocross">
+  <span class="sec-num">Academy — Level 03</span>
+  <h2 class="sec-title">AUTOCROSS</h2>
+  <p class="sec-intro">Autocross is the most accessible, affordable, and technically demanding entry point in motorsport. A cone course in a parking lot. Your daily driver. $50 entry. No license. And it will teach you more about car control and precision driving than most track days will.</p>
+  <div class="acad-grid">
+    <div class="acad-card"><div class="acad-num">01</div><h3>What Autocross Actually Teaches</h3><p>Precision: a cone is 12 inches wide. If you clip it, you get a 2-second penalty. This trains incredibly precise car placement. Rotation: you're asking the car to change direction constantly in tight spaces, which teaches you how to rotate the car with throttle, braking, and steering. Vision: you have to look 3–4 gates ahead or you won't know where you're going. And trail braking — the technique of carrying brake pressure into corners — is almost required to be competitive at autocross.</p></div>
+    <div class="acad-card"><div class="acad-num">02</div><h3>Walk the Course — Every Time</h3><p>Before your first run, walk the entire course on foot. Twice. The second walk, visualize yourself driving it. Identify: where the gates are (you drive through the center), the longest straights (where you'll be fastest), the tightest sections (where you'll lose most time), and the course reversal if there is one. Most drivers skip this. The drivers who walk twice beat the drivers who walk once. The drivers who walk once beat the drivers who just drive.</p></div>
+    <div class="acad-card"><div class="acad-num">03</div><h3>NC Miata Classes</h3><p>STR (Street Touring Roadster): your primary class. NC Miata with basic modifications allowed. Very competitive, good car for the class. E-Street: stock class for softtop sports cars. Less competitive nationally but great for learning. Check the SCCA classing for your exact NC year/trim — it matters which class you're most competitive in. Locally at Lone Star SCCA events the classes are well-attended and the community is welcoming to beginners.</p></div>
+    <div class="acad-card"><div class="acad-num">04</div><h3>Run Groups and Etiquette</h3><p>You'll be assigned a run group. When it's your group's turn, grid up and wait your turn. Between your runs, you're expected to work (help retrieve cones, be a course worker). This is the culture — everyone works, everyone drives. Don't leave after your runs without working. Respect the grid order. Don't spin your tires in the grid. When the course worker signals you, you go. Standard run is 5–6 runs per event.</p></div>
+    <div class="acad-card"><div class="acad-num">05</div><h3>Tire Pressure and Setup</h3><p>Autocross is won or lost on tire setup. Run your tires at the low end of the manufacturer's recommendation or slightly lower — softer sidewalls give more grip at low speeds. Check pressure cold before every run. As tires heat up during the day they gain pressure — check between runs and let air out if needed. On your NC, stock suspension is fine to start. Don't modify anything until you've run 10+ events and know what you're feeling.</p></div>
+    <div class="acad-card"><div class="acad-num">06</div><h3>Reading Your Times</h3><p>Your raw time tells you less than your comparison time. Compare against the class leader and class average — this tells you where you are relative to the competition. Compare against your own previous runs — are you improving across the day? If run 3 is faster than run 1, you're learning the course. If run 5 is slower than run 3, your tires are going off. The most improvement comes between events 1–5 for a new driver, then it flattens and you have to work specifically for each tenth of a second.</p></div>
+    <div class="acad-card"><div class="acad-num">07</div><h3>SCCA ProSolo</h3><p>After 10+ local events, ProSolo is the national-level competition. Side-by-side runs on mirrored courses — you and your class competition run simultaneously on parallel courses. First to finish (with cone penalties calculated) wins. ProSolo has a Ladies Challenge class specifically for female drivers. This is a legitimate national competition with trophies, national ranking points, and a genuine competitive community. It's where autocross gets serious.</p></div>
+    <div class="acad-card"><div class="acad-num">08</div><h3>Data Analysis for Autocross</h3><p>Harry's LapTimer app + a phone mount gives you data on your runs. Look at: lateral G through corners (how hard are you cornering?), throttle trace (are you getting on power smoothly at corner exit?), GPS track map (are you hitting the same line each run?). Some drivers use a go-kart-style video mount to capture cockpit footage alongside external. Reviewing footage from faster drivers in your class on the same course is worth 10 of your own runs.</p></div>
+  </div>
+</div>
+
+<!-- ══ ACADEMY: SPEC MIATA ══ -->
+<div class="page" id="page-academy-specmiata">
+  <span class="sec-num">Academy — Level 04</span>
+  <h2 class="sec-title">SPEC <em>MIATA</em></h2>
+  <p class="sec-intro">Spec Miata is the most popular club racing class in North America. Equal cars, equal tires, pure driver skill. It is brutal, close, and will make you a dramatically better driver. Your NC Miata is the foundation — here's everything about the class, the community, and the competitive path.</p>
+  <div class="acad-grid">
+    <div class="acad-card"><div class="acad-num">01</div><h3>What Is Spec Miata</h3><p>Spec Miata (SMX in SCCA) is a class where all cars run the same Mazda MX-5 Miata platform with a very restricted set of allowed modifications. The result is a field where the driver makes the difference, not the budget. Grids of 30–50 cars are common at regional events. Racing is close, physical, and teaches racecraft faster than almost any other class. If you can win or podium in Spec Miata, you can drive.</p></div>
+    <div class="acad-card"><div class="acad-num">02</div><h3>NC vs NB vs NA — Which Year</h3><p>NC (2006–2015) is your car. SMX class runs NC Miatas. The NC is heavier than the NB/NA but more modern. NB (1999–2005) and NA (1990–1997) run in their own classes. The NA/NB Spec Miata is historically the more common and more competitive class nationally. The NC class is growing. For your purposes — your NC Miata in SMX is the right starting point. Talk to the Lone Star Region SCCA to confirm current class rules.</p></div>
+    <div class="acad-card"><div class="acad-num">03</div><h3>Allowed Modifications</h3><p>Spec Miata rules are very restrictive by design. Generally allowed: safety equipment (roll bar, harness, fire suppression), brake pads (spec compound), tires (spec tire), basic suspension alignment within ranges, data acquisition. Generally NOT allowed: engine modifications, aero, significant suspension changes, weight reduction. Read the current SCCA GCR for SMX rules — they update periodically. The point is that everyone is essentially equal mechanically.</p></div>
+    <div class="acad-card"><div class="acad-num">04</div><h3>Building Your Race Car</h3><p>Starting from your NC Miata: Hard Dog or Bethania Garage roll bar ($800–1,200 installed) — required for racing with a harness. 5 or 6-point harness ($200–400). Fire suppression system ($300–600, required at many events). HANS device ($300–600, required when using a harness). Racing seat ($400–800). Safety equipment alone runs $2,000–3,500. This is before any car prep. Buy quality used gear — suits, harnesses, and seats in good condition are fine used. Helmets always new.</p></div>
+    <div class="acad-card"><div class="acad-num">05</div><h3>Race Weekend Structure</h3><p>A typical SCCA regional race weekend: Friday — tech inspection (your car is inspected for compliance and safety), optional practice session. Saturday — qualifying session (sets your grid position for Sunday's race), Race 1. Sunday — Race 2. Each race is typically 20–30 minutes. You'll run 3–4 sessions over the weekend. Budget: $400–600 entry, $200+ in gas and consumables, $500+ for tires depending on wear. First season budget reality: $3,000–5,000 for a full regional season excluding travel.</p></div>
+    <div class="acad-card"><div class="acad-num">06</div><h3>Racecraft in Close Racing</h3><p>Spec Miata races are door-to-door constantly. Key rules: you must give a car racing room if they have their nose alongside you entering a corner. Divebombing (braking impossibly late to force a pass) is both dangerous and will get you a penalty or black flag. The cleanest passes happen at corner exit — if you can get alongside someone at turn-in, you can use your corner exit speed advantage down the next straight. Patience wins races. Contact is almost always the fault of the passer.</p></div>
+    <div class="acad-card"><div class="acad-num">07</div><h3>Tire Management</h3><p>In a 30-minute sprint race on spec tires, tire management matters enormously. The first 5 laps, tires build heat and grip increases. Laps 10–15, tires are at peak. Laps 20–30, they start going off — grip drops, the car gets looser. Drivers who manage this by reducing lateral loads slightly in the late race preserve more pace than those who overdrive. This is a skill that transfers directly to endurance racing where tire management is the entire game.</p></div>
+    <div class="acad-card"><div class="acad-num">08</div><h3>The Spec Miata Community</h3><p>Spec Miata has the best community in club racing — experienced drivers genuinely help newcomers. Miata.net forums have decades of race prep knowledge. SpecMiata.com tracks national and regional results. r/SpecMiata on Reddit. The Lone Star Region SCCA Spec Miata community specifically is active and welcoming. Find the fastest driver in your class at your first event and ask them one specific technical question — they will almost always answer it. The culture is collaborative.</p></div>
+  </div>
+</div>
+
+<!-- ══ ACADEMY: GT4 ══ -->
+<div class="page" id="page-academy-gt4">
+  <span class="sec-num">Academy — Level 05</span>
+  <h2 class="sec-title">GT4 RACING</h2>
+  <p class="sec-intro">GT4 is the direct bridge between club racing and professional GT3. These are purpose-built racing cars with proper aero, sequential gearboxes, ABS, traction control, and real downforce — but designed to be accessible to well-funded amateur drivers. GT4 is expensive. But it's the rung you step onto before GT3.</p>
+  <div class="acad-grid">
+    <div class="acad-card"><div class="acad-num">01</div><h3>What Is GT4</h3><p>GT4 cars are production-based race cars built to a specific technical specification under SRO's Balance of Performance (BoP) system. Every car — Porsche 718 GT4 RS Clubsport, BMW M4 GT4, Aston Martin Vantage GT4, Mercedes-AMG GT4, McLaren 570S GT4 — is equalized in performance through BoP weight and power adjustments. The result is that car choice matters less than driver skill and team quality. They cost $150,000–$230,000 new, plus operating costs.</p></div>
+    <div class="acad-card"><div class="acad-num">02</div><h3>GT4 Series in North America</h3><p>SRO Pirelli GT4 America: the primary GT4 series, runs alongside GT World Challenge at major venues. Pro-Am format — professional co-driver paired with amateur. Michelin Pilot Challenge: IMSA's GT4 series, Pro-Am format, runs alongside IMSA WeatherTech. Porsche Sprint Challenge NA: GT4 Clubsport-spec Porsche 718, one-make series, runs as IMSA support at Daytona/Sebring/Long Beach/Austin. The Porsche series is actually GT3 Cup cars in the top class — Sprint Challenge proper uses the Cayman GT4 RS Clubsport.</p></div>
+    <div class="acad-card"><div class="acad-num">03</div><h3>What GT4 Teaches You</h3><p>ABS and TC management: learning to work with electronic driver aids rather than fighting them. Aero: the car has actual downforce, which means it behaves very differently at speed. The car gets more grip the faster you go through high-speed corners. Sequential gearbox: paddle-shift changes at the limit, heel-toe no longer required. Pit stops: driver changes, tire strategies, fuel windows. And most importantly — radio communication and engineer debriefs become essential. You're now part of a professional team operation.</p></div>
+    <div class="acad-card"><div class="acad-num">04</div><h3>Budget Reality</h3><p>A realistic GT4 season budget: car purchase or lease ($80–150K/season lease from team), entry fees ($15–25K for full season), tire budget ($30–50K), fuel and consumables ($10–20K), team fee ($50–100K for a professional operation), travel and hospitality ($20–40K). Total: $200K–400K for a full SRO GT4 America or Michelin Pilot Challenge season. Single race entries are possible in some series for $25–50K. This is where real sponsorship development becomes essential.</p></div>
+    <div class="acad-card"><div class="acad-num">05</div><h3>The Pro-Am Structure</h3><p>In GT4 Pro-Am, you're the Am driver. Your professional co-driver is the Pro. The Pro qualifies, starts the race, runs the first stint, hands off to you during a pit stop. You run the second stint and finish. This structure means you learn from a professional in real race conditions — they debrief you after every stint, you learn how they drove, and you develop your skills in a structured environment. Choose your professional co-driver carefully — their ability to coach is as important as their speed.</p></div>
+    <div class="acad-card"><div class="acad-num">06</div><h3>Getting a GT4 Drive</h3><p>The pathway: build a club racing resume (3–4 seasons of Spec Miata or similar), get your FIA Bronze rating, attend PCA and WIMNA events to meet team principals, build a sponsorship package, approach teams directly. Teams that run GT4: Wright Motorsports, Flying Lizard, Rebel Rock Racing, Conquest Racing, Capstone Motorsports, and many others. Most teams prefer to work with drivers who've come through a structured program — the WIMNA scholarship pipeline is specifically designed to fund female drivers into GT4 and GT3.</p></div>
+    <div class="acad-card"><div class="acad-num">07</div><h3>Porsche Sprint Challenge as Entry Point</h3><p>If Porsche is your brand target (and for GT3, Porsche is one of the most accessible teams through PMNA), the Porsche Sprint Challenge North America is the best entry into the IMSA paddock ecosystem. You'll race at Daytona, Sebring, Long Beach, Miami, and Austin as an IMSA support series. You're in the same paddock as GT3 teams, on the same weekend, building exactly the relationships you need. PMNA Customer Racing (porsche.com/motorsport) has direct programs for customer drivers.</p></div>
+    <div class="acad-card"><div class="acad-num">08</div><h3>FIA Driver Rating for GT4</h3><p>The FIA driver rating system: Bronze → Silver → Gold → Platinum. Bronze is the minimum Am driver rating for GT4 Pro-Am entries. To earn Bronze: documented club racing experience (minimum 2 years of active competition), endurance racing hours (AER, WRL, ChampCar all count), application through the Motorsport Safety Foundation (NASA affiliated). The FIA evaluates your experience holistically. Start building documented hours now — every HPDE, every race, every endurance entry should be logged in your racing resume from day one.</p></div>
+  </div>
+</div>
+
+<!-- ══ ACADEMY: GT3 ══ -->
+<div class="page" id="page-academy-gt3">
+  <span class="sec-num">Academy — Level 06</span>
+  <h2 class="sec-title">GT3 RACING</h2>
+  <p class="sec-intro">GT3 is the pinnacle of accessible motorsport. These are the most sophisticated racing cars available to non-factory professional drivers — over 500hp, significant downforce, carbon brakes, sequential transmission, and electronics systems that require deep technical understanding. The IMSA GTD class is your target.</p>
+  <div class="acad-grid">
+    <div class="acad-card"><div class="acad-num">01</div><h3>GT3 Car Technology</h3><p>A GT3 car generates 3–4G under braking, 2–3G in corners. The Porsche 911 GT3 R makes ~560hp from a naturally aspirated flat-six. Carbon ceramic brakes — they need heat to work properly, which means the first lap of any session is a warm-up lap. Sequential paddle-shift gearbox changes in under 50 milliseconds. ABS calibrated differently from any road car — the pedal feels different. Traction control systems with multiple maps for different conditions. Learning each system is part of your preparation as a driver.</p></div>
+    <div class="acad-card"><div class="acad-num">02</div><h3>IMSA GTD Rules</h3><p>IMSA GTD: each car must have at least one FIA Bronze or Silver rated driver (the Am). The Am must complete a minimum number of race hours per event. In endurance races (Rolex 24, Sebring 12H, Watkins Glen 6H, Petit Le Mans), driver time minimums and maximums are strictly enforced. The GTD class runs the same GT3-spec cars as the GTDPRO class but with the mandatory Am co-driver requirement. Understanding these rules is essential — teams structure their entire season around managing driver hours efficiently.</p></div>
+    <div class="acad-card"><div class="acad-num">03</div><h3>Working With a Race Engineer</h3><p>At GT3 level, you have a dedicated race engineer. This person is responsible for the car's setup, strategy, and your performance coaching. Your job is to give them precise, technical, reproducible feedback. "The car felt good" is useless. "The car understeers at the entry of Turn 7 on the initial steering input but then oversteers mid-corner when I add throttle before the apex" is exactly what they need. Practice this level of feedback starting at HPDE level. The best amateur GT3 drivers are the ones engineers love working with.</p></div>
+    <div class="acad-card"><div class="acad-num">04</div><h3>Endurance Race Strategy</h3><p>GT3 endurance races involve fuel strategy, tire strategy, driver change timing, safety car management, and traffic management. Your race engineer manages strategy — your job is to execute their calls precisely. Full course yellow (FCY): maintain pace, no overtaking, close up to the car ahead. Safety car: pit window opens, teams must decide whether to pit now or stay out. Driver change: must be executed within a defined time window. Learning to think strategically about racing — not just drive fast — is what separates good GT3 Am drivers from great ones.</p></div>
+    <div class="acad-card"><div class="acad-num">05</div><h3>Night Driving</h3><p>Endurance races include night stints. Everything changes at night: your visual reference points disappear, braking markers are invisible, the car feels different in cold air (tire pressure drops, aero balance shifts). Physical and mental fatigue are at their worst between 2–5AM. Preparation: visualization before your night stint (run the track in your mind), physical preparation (rest during the day, stay warm during pit stops), communication (brief your engineer on what feels different). Night driving is a distinct skill that only comes from doing endurance races.</p></div>
+    <div class="acad-card"><div class="acad-num">06</div><h3>GT3 Teams — Who to Know</h3><p>IMSA GTD teams to target for an Am drive: Wright Motorsports (Porsche — most Am-friendly, strong technical program), Pfaff Motorsports (Lamborghini — Canadian team, world-class operation), Triarsi Competizione (Ferrari — GTDPRO and GTD, strong Ferrari customer program), Turner Motorsport (BMW — legendary Am program, multiple GTD championships), Heart of Racing (Aston Martin — growing program, strong Am focus), Paul Miller Racing (Lamborghini — experienced GTD Am team). Research each team's Am history, their results with Am drivers, and their off-track culture before approaching them.</p></div>
+    <div class="acad-card"><div class="acad-num">07</div><h3>Physical Preparation</h3><p>GT3 is a physical sport. Neck strength: at 3G lateral load, your head and helmet (6–7kg combined) exert 20kg of force on your neck through every corner. In a 3-hour Sebring stint, that's thousands of repetitions. Grip endurance: steering a GT3 car for 3 hours requires sustained grip strength. Cardiovascular: heart rate averages 165–175bpm in a GT3 race — comparable to a hard run. Heat: cockpit temperatures can exceed 40°C. You sweat 3–4 liters per stint. Hydration tube in the helmet is standard. Your kinesiology background is a genuine competitive advantage here.</p></div>
+    <div class="acad-card"><div class="acad-num">08</div><h3>The Manufacturer Pathway</h3><p>Each GT3 manufacturer has a formal customer racing program: Porsche Motorsport NA (PMNA) — the most structured, with a clear ladder from GT4 to GT3. Ferrari Corse Clienti — invitation-based, Ferrari dealer relationship helps. Lamborghini Squadra Corse — customer program with dedicated Am support. BMW M Customer Racing — structured program with M Motorsport backing. Aston Martin AMR Performance Centre — growing program. These programs include driver coaching, technical support, and in some cases factory driver mentoring. Getting into a manufacturer program is the fastest legitimate path to a GT3 seat.</p></div>
+  </div>
+</div>
+
+<!-- ══ ACADEMY: TERMS ══ -->
+<div class="page" id="page-academy-terms">
+  <span class="sec-num">Academy — Reference</span>
+  <h2 class="sec-title">RACING TERMS <em>A–Z</em></h2>
+  <p class="sec-intro">Know the language. When you walk into a paddock and use the right terminology, people take you seriously. When you're on the radio with your engineer, precision matters. Learn these cold.</p>
+  <div class="terms-grid">
+    <div class="term-block"><div class="term-letter">A</div>
+      <div class="term-item"><span class="term-word">Apex</span><span class="term-def">The innermost point of a corner — where you want your car to be at the geometric center of the turn. Late apex = hitting it later than the geometric center, which optimizes exit speed.</span></div>
+      <div class="term-item"><span class="term-word">ABS</span><span class="term-def">Anti-lock Braking System. Prevents wheels from locking under hard braking by pulsing brake pressure. In a GT3 car, ABS is active and adjustable — different maps for wet vs dry.</span></div>
+      <div class="term-item"><span class="term-word">Aero</span><span class="term-def">Aerodynamic components (front splitter, rear wing, diffuser) that generate downforce. Downforce pushes the car into the track, increasing grip at speed. GT3 cars have significant aero — they get more grip the faster they go through high-speed corners.</span></div>
+    </div>
+    <div class="term-block"><div class="term-letter">B</div>
+      <div class="term-item"><span class="term-word">Balance of Performance (BoP)</span><span class="term-def">A system used in GT3 and GT4 racing where SRO or IMSA adjusts each car's weight and/or power to equalize performance across different manufacturers. BoP means the Porsche, Ferrari, and BMW should all be within tenths of each other in lap time.</span></div>
+      <div class="term-item"><span class="term-word">Brake Bias</span><span class="term-def">The distribution of braking force between front and rear axles. Adjustable in GT3 cars from the cockpit. More front bias = more front braking, better initial turn-in, risk of front lockup. More rear bias = better rotation, risk of rear lockup and spin.</span></div>
+      <div class="term-item"><span class="term-word">Bump Stop</span><span class="term-def">A rubber or foam stop inside the suspension that prevents the spring from fully compressing. Used in race car setup to control suspension travel and behavior at the limit of compression.</span></div>
+    </div>
+    <div class="term-block"><div class="term-letter">C</div>
+      <div class="term-item"><span class="term-word">Camber</span><span class="term-def">The angle of the tire relative to vertical, viewed from the front. Negative camber (top of tire leaning inward) improves cornering grip by keeping more tire contact patch on the road through corners. Too much negative camber hurts straight-line braking.</span></div>
+      <div class="term-item"><span class="term-word">Carbon Brakes</span><span class="term-def">Carbon ceramic brake rotors used in GT3 cars. They require heat to work — cold carbon brakes have very little bite. The first lap of every session is a warm-up lap to heat the brakes. Never push hard on cold carbon brakes.</span></div>
+      <div class="term-item"><span class="term-word">Chicane</span><span class="term-def">A tight S-shaped section of track, usually added to slow cars before a high-risk area. The key to a chicane is identifying which exit is more important — usually the second apex, because it leads to the next straight.</span></div>
+    </div>
+    <div class="term-block"><div class="term-letter">D</div>
+      <div class="term-item"><span class="term-word">Downforce</span><span class="term-def">Aerodynamic force pushing the car into the track. Generated by wings, splitters, and underbody diffusers. Downforce increases with speed — a GT3 car at 150mph has significantly more grip than at 50mph due to aero load.</span></div>
+      <div class="term-item"><span class="term-word">Drafting / Slipstreaming</span><span class="term-def">Reducing aerodynamic drag by following closely behind another car. The lead car punches a hole in the air — the following car sits in the low-pressure wake, reducing drag and allowing higher top speed. Used to set up passes on long straights.</span></div>
+      <div class="term-item"><span class="term-word">Drive-Through Penalty</span><span class="term-def">A penalty requiring you to drive through the pit lane without stopping. Typically adds 20–30 seconds to your time. Common penalties: speeding in pit lane, avoidable contact, false start, track limits violations.</span></div>
+    </div>
+    <div class="term-block"><div class="term-letter">F</div>
+      <div class="term-item"><span class="term-word">FCY (Full Course Yellow)</span><span class="term-def">All cars maintain position and pace behind a defined speed limit. No overtaking. Used for incidents on track. Different from a safety car — no physical pace car, just a speed restriction enforced electronically in modern series.</span></div>
+      <div class="term-item"><span class="term-word">FIA Bronze Rating</span><span class="term-def">The minimum driver rating to compete as the Am driver in GT3 Pro-Am events. Awarded by the FIA based on documented racing experience. Above Bronze: Silver (more experienced Am), Gold (national-level professional), Platinum (top international professional).</span></div>
+      <div class="term-item"><span class="term-word">Flat-Spot</span><span class="term-def">A flat area on a tire caused by locking up a wheel under braking. A flat-spotted tire creates a pronounced vibration and significantly reduces performance. Bad enough flat spots require a pit stop for a tire change.</span></div>
+    </div>
+    <div class="term-block"><div class="term-letter">G</div>
+      <div class="term-item"><span class="term-word">G-Force</span><span class="term-def">The force of acceleration acting on the driver relative to gravity. 1G = your body weight. GT3 cars generate 3–4G under braking, 2–3G in cornering. HANS device and neck strength are specifically designed to manage these loads on the driver's head and neck.</span></div>
+      <div class="term-item"><span class="term-word">GT3 / GT4</span><span class="term-def">Global technical specifications managed by SRO for GT3 and GT4 racing cars. GT3 is the higher spec — manufacturer-built, significant aero, 500+ hp. GT4 is the lower spec — production-based, less aero, ~400hp. Both classes run in SRO championships worldwide and IMSA in North America.</span></div>
+    </div>
+    <div class="term-block"><div class="term-letter">H</div>
+      <div class="term-item"><span class="term-word">HANS Device</span><span class="term-def">Head and Neck Support device. A carbon fiber collar worn with the helmet that prevents the head from snapping forward in an impact. Required in club racing when using a multi-point harness. Saved countless lives since becoming mandatory.</span></div>
+      <div class="term-item"><span class="term-word">HPDE</span><span class="term-def">High Performance Driver Education. NASA's structured program for learning track driving. Four levels (1–4) with progressively less instructor involvement and more passing freedom. The most organized beginner pathway in American motorsport.</span></div>
+      <div class="term-item"><span class="term-word">Heel-Toe</span><span class="term-def">A braking and downshifting technique where you brake with the ball of your right foot while simultaneously blipping the throttle with your heel to match engine revs to the lower gear. This prevents the car from lurching when you release the clutch. Not required in sequential gearbox cars.</span></div>
+    </div>
+    <div class="term-block"><div class="term-letter">L</div>
+      <div class="term-item"><span class="term-word">Late Apex</span><span class="term-def">Turning in to a corner later than the geometric apex, hitting the apex later. This allows earlier and harder throttle application at corner exit, maximizing speed down the following straight. The late apex is the correct approach for most corners in racing.</span></div>
+      <div class="term-item"><span class="term-word">Lift and Coast</span><span class="term-def">Lifting off throttle early before a braking zone to save fuel. Used in endurance racing for fuel management. Modern GT3 cars have lift-and-coast modes in the ECU. Drivers can also do it manually — lifting 100m before the normal braking point saves fuel while sacrificing minimal lap time.</span></div>
+    </div>
+    <div class="term-block"><div class="term-letter">O</div>
+      <div class="term-item"><span class="term-word">Oversteer</span><span class="term-def">When the rear of the car loses grip and slides outward, causing the car to rotate more than intended. Counter-steer (turn the wheel in the direction of the slide) to catch it. Miatas are rear-wheel drive and naturally tend toward oversteer when provoked.</span></div>
+      <div class="term-item"><span class="term-word">Overcut / Undercut</span><span class="term-def">Pit stop strategy terms. Undercut: pit before your competitor, emerge with fresher tires and potentially jump them in the pit stop sequence. Overcut: stay out longer than competitors, gaining track position while they pit, gambling that your older tires still have pace.</span></div>
+    </div>
+    <div class="term-block"><div class="term-letter">P</div>
+      <div class="term-item"><span class="term-word">Pro-Am</span><span class="term-def">A race format pairing a professional driver (Pro) with an amateur driver (Am) in the same car. The Am is typically the one with the budget, the Pro provides speed and coaching. Standard format for GT3 and GT4 racing at IMSA and SRO level.</span></div>
+      <div class="term-item"><span class="term-word">Point-By</span><span class="term-def">A hand signal (pointing to the side you want them to pass) given by a driver to indicate they're allowing the following car to overtake. Required in HPDE1–3 and some other situations. In HPDE4 and club racing, passing is open without a point-by.</span></div>
+    </div>
+    <div class="term-block"><div class="term-letter">R</div>
+      <div class="term-item"><span class="term-word">Racing Line</span><span class="term-def">The optimal path through a corner or series of corners that maximizes average speed. Generally: late turn-in, geometric or late apex, full track-out. The racing line through one corner is often compromised to optimize the entry to the next corner.</span></div>
+      <div class="term-item"><span class="term-word">Ride Height</span><span class="term-def">The distance between the bottom of the car and the track surface. Lower ride height = less aerodynamic drag, better aero performance from the underbody, more risk of bottoming out. GT3 cars run very low ride heights — millimeters matter.</span></div>
+    </div>
+    <div class="term-block"><div class="term-letter">S</div>
+      <div class="term-item"><span class="term-word">Snap Oversteer</span><span class="term-def">A sudden, violent loss of rear grip that catches drivers off guard — often caused by lifting off throttle mid-corner (which transfers weight forward and unloads the rear), hitting a bump, or sudden steering input. Very difficult to catch at high speed.</span></div>
+      <div class="term-item"><span class="term-word">Stint</span><span class="term-def">One driver's continuous time in the car during an endurance race. In a 24-hour race, each driver typically runs 2–3 stints of 2–3 hours each. Stint length is limited by fuel window, tire life, and minimum/maximum driver time rules.</span></div>
+    </div>
+    <div class="term-block"><div class="term-letter">T</div>
+      <div class="term-item"><span class="term-word">Trail Braking</span><span class="term-def">Carrying brake pressure past the turn-in point and gradually releasing it through the initial cornering phase. This keeps weight on the front tires for grip and helps rotate the car. One of the most important and difficult techniques to master. Learn it in sim first.</span></div>
+      <div class="term-item"><span class="term-word">Traction Control (TC)</span><span class="term-def">Electronic system that reduces engine power or applies brakes when driven wheels begin to spin. GT3 cars have multi-map TC systems — lower TC numbers mean more intervention (safer, slower), higher numbers mean less intervention (faster in the dry, riskier). Drivers must understand when to adjust TC map during a session.</span></div>
+      <div class="term-item"><span class="term-word">Track Limits</span><span class="term-def">The defined boundaries of the racing surface, usually marked by white lines. Exceeding track limits (all four wheels outside the line) is a penalty at most professional events. At some circuits and events, kerbs are considered within track limits. Know the specific rules at each event.</span></div>
+    </div>
+    <div class="term-block"><div class="term-letter">U</div>
+      <div class="term-item"><span class="term-word">Understeer</span><span class="term-def">When the front of the car loses grip and the car goes straight instead of turning. The front wheels are turned but the car pushes wide. Fix: reduce steering input, reduce throttle slightly to transfer weight forward, be patient. Most common issue for new drivers who are carrying too much speed into corners.</span></div>
+    </div>
+    <div class="term-block"><div class="term-letter">W</div>
+      <div class="term-item"><span class="term-word">Weight Transfer</span><span class="term-def">The dynamic shifting of the car's weight under acceleration, braking, and cornering. Under braking, weight transfers forward (more front grip, less rear). Under acceleration, weight transfers rearward (more rear traction). Understanding weight transfer is foundational to understanding how to drive fast.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ VIDEO DIARY ══ -->
+<div class="page" id="page-videodiary">
+  <span class="sec-num">My Journey</span>
+  <h2 class="sec-title">VIDEO <em>Diary</em></h2>
+  <p class="sec-intro">Your journey becoming a race car driver, documented in real time. Paste any YouTube or Instagram link, add a title and note, and it gets added to your feed. This is your story — raw, real, and in order.</p>
+  <div class="vd-compose">
+    <input type="text" id="vd-url" placeholder="Paste YouTube URL (e.g. https://youtu.be/xxxx or https://www.youtube.com/watch?v=xxxx)" />
+    <input type="text" id="vd-title" placeholder="Title (e.g. First autocross — Harris Hill, April 2026)" />
+    <textarea id="vd-note" placeholder="What happened? What did you learn? How did it feel?"></textarea>
+    <div class="vd-meta">
+      <select id="vd-cat">
+        <option>Track Day</option><option>Autocross</option><option>Race</option>
+        <option>Sim Session</option><option>Karting</option><option>Paddock Visit</option>
+        <option>Car Work</option><option>Reflection</option><option>Milestone</option>
+      </select>
+      <label class="j-checkbox"><input type="checkbox" id="vd-pub"> Share publicly</label>
+      <button class="btn-red" onclick="addVideo()">Add to Diary</button>
+    </div>
+  </div>
+  <div id="vd-list"></div>
+</div>
+
+<!-- ══ STUDY MATERIALS ══ -->
+<div class="page" id="page-studymaterials">
+  <span class="sec-num">Resources</span>
+  <h2 class="sec-title">STUDY <em>Materials</em></h2>
+  <p class="sec-intro">Your curated racing education library. 16 videos pre-loaded — everything from racing terms to GT3 fundamentals to how to start racing on any budget. Add more as you find them.</p>
+
+  <div class="study-filters">
+    <button class="sf-btn active" onclick="filterStudy('all')">All</button>
+    <button class="sf-btn" onclick="filterStudy('foundations')">Foundations</button>
+    <button class="sf-btn" onclick="filterStudy('technique')">Technique</button>
+    <button class="sf-btn" onclick="filterStudy('pathway')">Pathway</button>
+    <button class="sf-btn" onclick="filterStudy('series')">Series</button>
+    <button class="sf-btn" onclick="filterStudy('budget')">Budget</button>
+  </div>
+
+  <div id="study-add" class="vd-compose" style="margin-bottom:32px;">
+    <input type="text" id="sm-url" placeholder="Add a YouTube URL to your library" />
+    <input type="text" id="sm-title" placeholder="Title" />
+    <textarea id="sm-note" placeholder="Why is this useful? What's the key takeaway?" style="min-height:60px;"></textarea>
+    <div class="vd-meta">
+      <select id="sm-cat">
+        <option value="foundations">Foundations</option>
+        <option value="technique">Technique</option>
+        <option value="pathway">Pathway</option>
+        <option value="series">Series</option>
+        <option value="budget">Budget</option>
+      </select>
+      <button class="btn-red" onclick="addStudyVideo()">Add to Library</button>
+    </div>
+  </div>
+
+  <div id="study-list"></div>
+</div>
+
 </main>
 </div>
 </div><!-- /mm-racing-hub -->
@@ -778,6 +1105,149 @@ document.querySelectorAll('.mode-btn').forEach(btn=>{btn.addEventListener('click
 function toggleSB(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('overlay').classList.toggle('open');}
 function closeSB(){document.getElementById('sidebar').classList.remove('open');document.getElementById('overlay').classList.remove('open');}
 renderDashRecent();updateStats();
+
+// ── VIDEO DIARY ──
+const VD_KEY = 'mm_videodiary_v1';
+const SM_KEY = 'mm_studymats_v1';
+
+const PRELOADED = [{"id": "dUrMKx8eb7E", "title": "Racing Terms Explained: The Language of Speed", "channel": "Just your average race fan", "cat": "foundations", "note": "Essential vocabulary \u2014 learn every term before your first track event. Watch this before anything else."}, {"id": "wvvu4uqt25g", "title": "Every Major Racing Series Explained In 12 Minutes", "channel": "Racing Explained", "cat": "series", "note": "Big picture overview of every series from F1 to local club racing. Understand the ecosystem you're entering."}, {"id": "9ngnCrBKWZA", "title": "Everything You Need to Know About Cars", "channel": "Chariots", "cat": "foundations", "note": "Car fundamentals \u2014 how engines, transmissions, and chassis work. The mechanical literacy foundation."}, {"id": "v8NRmX5D2pY", "title": "Racing Line Explained: How To Take Corners Fast", "channel": "Alec Udell", "cat": "technique", "note": "The most important technique video. Late apex, trail braking basics, vision. Watch this repeatedly."}, {"id": "wiAtQpsdBs0", "title": "How To Become A Race Car Driver | Tom Kristensen Interview", "channel": "AlexMartini", "cat": "pathway", "note": "Nine-time Le Mans winner Tom Kristensen on the pathway to professional racing. The blueprint from someone who did it."}, {"id": "9BJrYOelCA0", "title": "Can You Really Become a PRO Through Sim Racing?", "channel": "James Baldwin", "cat": "pathway", "note": "James Baldwin made it to professional GT3 racing primarily through sim racing. The modern pathway explained."}, {"id": "bIdG3f-u1OU", "title": "How to Get Into Car Racing on ANY Budget", "channel": "Gabe Orlowitz Racing", "cat": "budget", "note": "From $1K to $50K/year entry points. Know every budget tier and what you get at each level."}, {"id": "UxwZmHkpsUg", "title": "Ultimate Guide to GT Racing", "channel": "Triple Crown Racing", "cat": "series", "note": "Complete GT racing world explained \u2014 GT3, GT4, series, how it all connects. Watch this before approaching any team."}, {"id": "XYVigIeX9Fo", "title": "How to Start Racing \u2014 From $200 to $1M", "channel": "David Lecko", "cat": "budget", "note": "Complete cost breakdown at every level of motorsport. Your financial planning reference."}, {"id": "ycHr7MH0Gvw", "title": "Coach Dave Academy \u2014 GT3 Car Fundamentals", "channel": "Assetto Corsa Official", "cat": "technique", "note": "GT3 driving fundamentals from a professional coaching academy. How to drive a GT3 car smooth and fast."}, {"id": "zSBSmB3WbLY", "title": "How To Become A Race Driver At Any Age", "channel": "Enzo Mucci", "cat": "pathway", "note": "Enzo Mucci's story \u2014 realistic pathway advice for adult drivers entering motorsport later than childhood."}, {"id": "feaoRDmLmmk", "title": "How to Start Karting as a Beginner in 2026", "channel": "KTips", "cat": "pathway", "note": "Current guide to starting karting. Classes, costs, equipment, first steps. Your Level 01 entry point."}, {"id": "BnPNwdX3r2s", "title": "How To Go Racing With No Money", "channel": "Formula Zac", "cat": "budget", "note": "Creative approaches to funding a racing career. Volunteering, co-driving, sponsorship \u2014 all covered."}, {"id": "o_jWKSbHBtc", "title": "What Is Spec Miata?", "channel": "Mechelke Racing", "cat": "series", "note": "The definitive Spec Miata explanation from a racing team. Your likely first racing class explained in detail."}, {"id": "Q-_VTAPspuE", "title": "How Do You Get Started in Miata Racing?", "channel": "Miata Motorsport", "cat": "series", "note": "Specifically about getting into Miata racing \u2014 the practical steps from someone in the community."}, {"id": "g6KdpmAjOxA", "title": "HOW TO BECOME A RACE CAR DRIVER", "channel": "GTS Car Life", "cat": "pathway", "note": "How to get a racing license \u2014 the complete process from zero to licensed competitor."}];
+
+function ytEmbed(url) {
+  const patterns = [
+    /youtube\.com\/watch\?v=([\w-]+)/,
+    /youtu\.be\/([\w-]+)/,
+    /youtube\.com\/shorts\/([\w-]+)/,
+    /youtube\.com\/embed\/([\w-]+)/
+  ];
+  for (const p of patterns) {
+    const m = url.match(p);
+    if (m) return m[1];
+  }
+  return null;
+}
+
+function getVideoDiary() { return load(VD_KEY) || []; }
+function saveVideoDiary(v) { save(VD_KEY, v); }
+
+function addVideo() {
+  const url = document.getElementById('vd-url').value.trim();
+  const title = document.getElementById('vd-title').value.trim();
+  const note = document.getElementById('vd-note').value.trim();
+  const cat = document.getElementById('vd-cat').value;
+  const pub = document.getElementById('vd-pub').checked;
+  if (!url || !title) return;
+  const vid = ytEmbed(url);
+  if (!vid) { alert('Please enter a valid YouTube URL'); return; }
+  const diary = getVideoDiary();
+  diary.unshift({id: Date.now(), vid, url, title, note, cat, pub, date: new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})});
+  saveVideoDiary(diary);
+  document.getElementById('vd-url').value = '';
+  document.getElementById('vd-title').value = '';
+  document.getElementById('vd-note').value = '';
+  document.getElementById('vd-pub').checked = false;
+  renderVideoDiary();
+}
+
+function delVideo(id) {
+  saveVideoDiary(getVideoDiary().filter(v => v.id !== id));
+  renderVideoDiary();
+}
+
+function renderVideoDiary() {
+  const diary = getVideoDiary();
+  const el = document.getElementById('vd-list');
+  if (!diary.length) {
+    el.innerHTML = '<div class="no-videos">No entries yet — paste your first YouTube link above and document your journey.</div>';
+    return;
+  }
+  el.innerHTML = diary.map(v => `
+    <div class="vd-entry">
+      <div class="vd-video">
+        <iframe src="https://www.youtube.com/embed/${v.vid}?rel=0" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="vd-info">
+        <button class="vd-del" onclick="delVideo(${v.id})">✕</button>
+        <span class="vd-cat-badge">${v.cat}</span>
+        <div class="vd-title">${escH(v.title)}</div>
+        ${v.note ? `<div class="vd-note">${escH(v.note)}</div>` : ''}
+        <div class="vd-date">${v.date}${v.pub ? ' · ✦ Public' : ''}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── STUDY MATERIALS ──
+function getStudyMats() {
+  const stored = load(SM_KEY);
+  if (stored && stored.length) return stored;
+  return PRELOADED.map((v) => ({...v, date: 'Pre-loaded', userAdded: false}));
+}
+function saveStudyMats(v) { save(SM_KEY, v); }
+
+function addStudyVideo() {
+  const url = document.getElementById('sm-url').value.trim();
+  const title = document.getElementById('sm-title').value.trim();
+  const note = document.getElementById('sm-note').value.trim();
+  const cat = document.getElementById('sm-cat').value;
+  if (!url || !title) return;
+  const vid = ytEmbed(url);
+  if (!vid) { alert('Please enter a valid YouTube URL'); return; }
+  const mats = getStudyMats();
+  mats.unshift({id: Date.now(), vid, url, title, note, cat, date: new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}), userAdded: true});
+  saveStudyMats(mats);
+  document.getElementById('sm-url').value = '';
+  document.getElementById('sm-title').value = '';
+  document.getElementById('sm-note').value = '';
+  renderStudyMats('all');
+}
+
+function delStudyVideo(id) {
+  saveStudyMats(getStudyMats().filter(v => v.id !== id));
+  renderStudyMats(currentFilter);
+}
+
+let currentFilter = 'all';
+function filterStudy(cat) {
+  currentFilter = cat;
+  document.querySelectorAll('.sf-btn').forEach(b => b.classList.toggle('active', b.textContent.toLowerCase() === cat || (cat==='all' && b.textContent==='All')));
+  renderStudyMats(cat);
+}
+
+function renderStudyMats(cat) {
+  const mats = getStudyMats();
+  const filtered = cat === 'all' ? mats : mats.filter(v => v.cat === cat);
+  const el = document.getElementById('study-list');
+  if (!filtered.length) { el.innerHTML = '<div class="no-videos">No videos in this category yet.</div>'; return; }
+  el.innerHTML = '<div class="study-grid">' + filtered.map(v => `
+    <div class="sv-entry" data-cat="${v.cat}">
+      <div class="sv-thumb">
+        <iframe src="https://www.youtube.com/embed/${v.id && typeof v.id === 'string' ? v.id : v.vid}?rel=0" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="sv-info">
+        <span class="sv-cat">${v.cat}</span>
+        <div class="sv-title">${escH(v.title)}</div>
+        ${v.note ? `<div class="sv-note">${escH(v.note)}</div>` : ''}
+        ${v.channel ? `<div class="sv-note" style="color:var(--muted);margin-top:6px;">by ${v.channel}</div>` : ''}
+        <div class="sv-actions">
+          <a class="sv-watch" href="https://www.youtube.com/watch?v=${v.id && typeof v.id === 'string' ? v.id : v.vid}" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+          ${v.userAdded ? `<button class="sv-del" onclick="delStudyVideo(${v.id})">remove</button>` : ''}
+        </div>
+      </div>
+    </div>
+  `).join('') + '</div>';
+}
+
+// Init new sections
+renderVideoDiary();
+renderStudyMats("all");
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
+}
 </script>
 </body>
 </html>
